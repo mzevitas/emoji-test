@@ -1,18 +1,42 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home-page">
+
+    <h1>Text Area</h1>
+    <textarea-emoji-picker
+      v-model="text"
+    />
+
+    <h1>Input</h1>
+    <input-emoji-picker
+    v-model="input"/>
   </div>
 </template>
 
+
+
+
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import TextareaEmojiPicker from '../components/TextareaEmojiPicker.vue'
+import InputEmojiPicker from '../components/InputEmojiPicker.vue'
+
+
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
+
+components: { TextareaEmojiPicker, InputEmojiPicker },
+  data () {
+    return {
+      text: '',
+      input: ''
+    }
   }
 }
+
 </script>
+
+<style scoped>
+  h1 {
+    font-size: 20px;
+  }
+</style>
+
